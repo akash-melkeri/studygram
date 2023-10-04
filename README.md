@@ -1,4 +1,4 @@
-# Studygram
+# Welcome to Studygram
 
 We all know that Instagram can be distracting, but Studygram is here to help. Our focus is on educational content tailored to your interests. Follow creators who share topics you love and transform your scrolling into a productive learning experience. Join a community of learners, get study tips, recommendations, and make Instagram a tool for personal growth. Say goodbye to mindless scrolling and hello to meaningful learning with Studygram.
 
