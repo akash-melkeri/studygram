@@ -1,10 +1,11 @@
 # Studygram
 
-We all know that Instagram can be distracting and you might find yourself continuously scrolling. Not all of us want that. Right? Well, This is where Studygram comes in. In Studygram, Our focus will be on educational content. So even if you find yourself continuosly scrolling, it will be better. Just choose your interests or follow the creators who share topics that interest you.
+We all know that Instagram can be distracting, but Studygram is here to help. Our focus is on educational content tailored to your interests. Follow creators who share topics you love and transform your scrolling into a productive learning experience. Join a community of learners, get study tips, recommendations, and make Instagram a tool for personal growth. Say goodbye to mindless scrolling and hello to meaningful learning with Studygram.
 
 ## Techstack
-link example
-[Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js)
+
+- [Quasar](https://quasar.dev/) (which is built on [VueJS](https://vuejs.org/), and it has many prebuilt components)
+- [Tailwindcss](https://tailwindcss.com/)
 
 ## Want to contribute ? Here's the setup guide
 ```bash
