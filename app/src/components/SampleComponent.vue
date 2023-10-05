@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    Sample Component
+  </div>
 </template>
 <script>
 import { defineComponent, ref } from 'vue'
