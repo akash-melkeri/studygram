@@ -8,7 +8,7 @@ const routes = [
         path: '/',
         component: () => import('pages/Home.vue'),
         meta:{
-          is_public:false,
+          requiresAuth:true,
         }
       },
     ]

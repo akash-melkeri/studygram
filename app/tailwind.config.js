@@ -5,9 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'primary':'#00B488',
+        'primary':'#ffffff',
         'secondary':'#00B488',
-        'accent':'#00B488',
+        'accent':'#833AB4',
+        'link-color':"#3897F0",
+        'error':'#ED4956'
       },
     },
   },
