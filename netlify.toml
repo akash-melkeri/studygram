@@ -1,7 +1,7 @@
 [build]
   functions = "functions"
   base = "/app/"
-  publish = "dist"
+  publish = "dist/spa"
   command = "quasar build"
 
 [dev]
