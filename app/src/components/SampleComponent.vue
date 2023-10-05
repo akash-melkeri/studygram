@@ -7,7 +7,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: 'EssentialLink',
+  name: 'SampleComponent',
   props: {
     test:{
       default:'test'
