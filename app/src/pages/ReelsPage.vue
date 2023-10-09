@@ -6,7 +6,7 @@
       <q-toolbar class="bg-transparent tw-flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="tw-w-6 tw-h-6"
+          class="tw-w-6 tw-h-6 cursor"
           style="text-shadow: 0 0 10px #00000077"
           viewBox="0 0 24 24"
         >
@@ -34,7 +34,7 @@
                 class="tw-h-10 tw-w-10 tw-rounded-full tw-border-2"
               ></q-img>
               <div class="tw-flex tw-gap-1 tw-items-center">
-                <span>studygram</span>
+                <span class="cursor">studygram</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-5 tw-w-5 tw-text-sky-500" viewBox="0 0 24 24"><path fill="currentColor" d="M10.95 12.7L9.5 11.275Q9.225 11 8.812 11t-.712.3q-.275.275-.275.7t.275.7l2.15 2.15q.3.3.7.3t.7-.3l4.25-4.25q.3-.3.287-.7t-.287-.7q-.3-.3-.713-.312t-.712.287L10.95 12.7Zm-2.8 9.05L6.7 19.3l-2.75-.6q-.375-.075-.6-.388t-.175-.687L3.45 14.8l-1.875-2.15q-.25-.275-.25-.65t.25-.65L3.45 9.2l-.275-2.825q-.05-.375.175-.688t.6-.387l2.75-.6l1.45-2.45q.2-.325.55-.438t.7.038l2.6 1.1l2.6-1.1q.35-.15.7-.038t.55.438L17.3 4.7l2.75.6q.375.075.6.388t.175.687L20.55 9.2l1.875 2.15q.25.275.25.65t-.25.65L20.55 14.8l.275 2.825q.05.375-.175.688t-.6.387l-2.75.6l-1.45 2.45q-.2.325-.55.438t-.7-.038l-2.6-1.1l-2.6 1.1q-.35.15-.7.038t-.55-.438Z"/></svg>
               </div>
               <div>
@@ -62,8 +62,8 @@
               </span>
             </div>
             <div class="tw-flex tw-gap-2 tw-items-center">
-              <div class="tw-border tw-border-gray-600/90 tw-px-2 tw-rounded-full">Music</div>
-              <div class="tw-border tw-border-gray-600/90 tw-px-2 tw-rounded-full">2 people</div>
+              <div class="tw-border tw-border-gray-600/90 tw-px-2 tw-rounded-full cursor">Music</div>
+              <div class="tw-border tw-border-gray-600/90 tw-px-2 tw-rounded-full cursor">2 people</div>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
           <div class="tw-p-1 tw-flex tw-flex-col tw-items-center ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="tw-h-8 tw-w-8"
+              class="tw-h-8 tw-w-8 cursor"
               viewBox="0 0 24 24"
             >
               <path
@@ -86,7 +86,7 @@
           <div class="tw-p-1 tw-flex tw-flex-col tw-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="tw-h-7 tw-w-7"
+              class="tw-h-7 tw-w-7 cursor"
               viewBox="0 0 24 24"
             >
               <path
@@ -103,7 +103,7 @@
           <div class="tw-p-1 tw-flex tw-flex-col tw-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="tw-h-7 tw-w-7"
+              class="tw-h-7 tw-w-7 cursor"
               viewBox="0 0 256 256"
             >
               <path
@@ -116,7 +116,7 @@
           <div class="tw-p-1 tw-flex tw-flex-col tw-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="tw-h-7 tw-w-7 tw-p-0.5"
+              class="tw-h-7 tw-w-7 tw-p-0.5 cursor"
               viewBox="0 0 24 24"
             >
               <path
@@ -127,7 +127,7 @@
           </div>
           <q-img
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e43bdbc5-5baa-41f3-a42a-b7387cbb0474/d7eyevl-f13398d4-8f57-4ffe-be59-932e2b7377f1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9lNDNiZGJjNS01YmFhLTQxZjMtYTQyYS1iNzM4N2NiYjA0NzQvZDdleWV2bC1mMTMzOThkNC04ZjU3LTRmZmUtYmU1OS05MzJlMmI3Mzc3ZjEucG5nIn1dXX0.O-hQiJZhzXKV_5mMj3i0ObTRObL2O_4N_3Ht3CCIegQ"
-            class="tw-h-7 tw-w-7 tw-border-2 tw-rounded"
+            class="tw-h-7 tw-w-7 tw-border-2 tw-rounded cursor"
           ></q-img>
         </div>
       </div>
