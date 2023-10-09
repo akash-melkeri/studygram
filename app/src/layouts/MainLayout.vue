@@ -1,35 +1,32 @@
 <template>
   <q-layout view="lHr LpR lFr">
-
     <q-page-container>
       <router-view />
     </q-page-container>
-
     <ToolbarMain />
-
   </q-layout>
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import ToolbarMain from 'src/components/ToolbarMain.vue'
+import { defineComponent, ref } from "vue";
+import ToolbarMain from "src/components/ToolbarMain.vue";
 
 export default defineComponent({
-  name: 'MainLayout',
+  name: "MainLayout",
 
   components: {
     ToolbarMain
   },
 
-  setup () {
-    const leftDrawerOpen = ref(false)
+  setup() {
+    const leftDrawerOpen = ref(false);
 
     return {
       leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
+      toggleLeftDrawer() {
+        leftDrawerOpen.value = !leftDrawerOpen.value;
       }
-    }
+    };
   }
-})
+});
 </script>
