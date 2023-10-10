@@ -9,8 +9,8 @@
           class="tw-duration-300"
           :class="
             is_search_focused
-              ? 'tw-w-6 tw-h-6 tw-mr-3'
-              : 'tw-w-0 tw-h-6 tw-mr-0'
+              ? 'tw-w-6 tw-h-6 tw-mr-3 tw-cursor-pointer'
+              : 'tw-w-0 tw-h-6 tw-mr-0 tw-cursor-pointer'
           "
           viewBox="0 0 24 24"
         >
@@ -30,7 +30,7 @@
           <template v-slot:prepend>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="tw-h-4 tw-w-4 tw-mr-1"
+              class="tw-h-4 tw-w-4 tw-mr-1 tw-cursor-pointer"
               viewBox="0 0 24 24"
             >
               <g fill="none" fill-rule="evenodd">
