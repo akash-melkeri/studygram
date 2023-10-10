@@ -1,9 +1,9 @@
 <template>
   <q-layout view="lHr LpR lFr">
     <q-page-container>
-      <router-view />
+      <router-view class="tw-max-w-md tw-mx-auto" />
     </q-page-container>
-    <ToolbarMain />
+    <ToolbarMain class="tw-max-w-md tw-mx-auto" />
   </q-layout>
 </template>
 
