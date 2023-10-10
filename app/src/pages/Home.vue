@@ -5,12 +5,12 @@
     >
       <q-toolbar class="bg-transparent">
         <q-toolbar-title>
-          <img src="/text-studygram.png" class="tw-h-10 cursor" />
+          <img src="/text-studygram.png" class="tw-h-10 tw-cursor-pointer" />
         </q-toolbar-title>
         <div class="tw-flex tw-gap-4 tw-items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="tw-h-[1.75em] tw-w-[1.75em] cursor"
+            class="tw-h-[1.75em] tw-w-[1.75em] tw-cursor-pointer"
             viewBox="0 0 24 24"
           >
             <path
@@ -20,7 +20,7 @@
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="tw-h-6 tw-w-6 cursor"
+            class="tw-h-6 tw-w-6 tw-cursor-pointer"
             viewBox="0 0 24 24"
           >
             <path
@@ -41,7 +41,6 @@
 
 <script>
 import { defineComponent } from "vue";
-import "../css/styles.css";
 
 export default defineComponent({
   name: "IndexPage"
