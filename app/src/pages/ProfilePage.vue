@@ -103,28 +103,777 @@
         <!-- <q-btn flat type="button" class="tw-bg-gray-100 tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-text-sm tw-text-center tw-w-full hover:bg-black/10 tw-transition-colors tw-outline-none;">Ad Tools</q-btn> -->
       </div>
     </div>
+    <div>
+      <q-scroll-area class="q-p-4">
+        <q-row class="q-justify-between" v-for="item in 8" :key="item">
+          <q-col cols="auto" v-for="i in 4" :key="i">
+            <story-box
+              :avatar="`https://picsum.photos/id/${i}/200/300`"
+              :username="`${getRandomEmoji()} Highlight`"
+              :contrast="true"
+              :seen="true"
+            />
+          </q-col>
+        </q-row>
+      </q-scroll-area>
+    </div>
+    <div style="max-width: 600px">
+      <q-tabs v-model="tab" align="justify" narrow-indicator class="q-mb-lg">
+        <q-tab name="a" icon="pages" />
+        <q-tab name="b" icon="play_circle" />
+        <q-tab name="c" icon="collections_bookmark" />
+      </q-tabs>
+
+      <div class="q-gutter-y-sm">
+        <q-tab-panels
+          v-model="tab"
+          animated
+          transition-prev="scale"
+          transition-next="scale"
+        >
+          <q-tab-panel name="a" class="q-pa-none">
+            <div class="tw-space-y-px tw-pt-1 tw-pb-16">
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/11/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/12/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/13/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/21/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/22/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/23/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/31/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/32/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/33/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/41/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/42/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/43/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/51/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/52/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 5.14v14l11-7l-11-7Z"
+                      ></path></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/53/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/61/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 5.14v14l11-7l-11-7Z"
+                      ></path></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/62/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/63/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </q-tab-panel>
+
+          <q-tab-panel name="b"  class="q-pa-none">
+            <div class="tw-space-y-px tw-pt-1 tw-pb-16">
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/11/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/12/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/13/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/21/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/22/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/23/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/31/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/32/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/33/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/41/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/42/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/43/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/51/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/52/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 5.14v14l11-7l-11-7Z"
+                      ></path></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/53/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/61/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 5.14v14l11-7l-11-7Z"
+                      ></path></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/62/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/63/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </q-tab-panel>
+
+          <q-tab-panel name="c"  class="q-pa-none">
+            <div class="tw-space-y-px tw-pt-1 tw-pb-16">
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/11/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/12/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/13/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/21/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/22/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/23/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <g
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      >
+                        <rect width="14" height="14" x="7" y="3" rx="2"></rect>
+                        <path
+                          d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
+                        ></path>
+                      </g></svg
+                    >
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/31/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/32/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/33/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/41/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/42/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/43/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/51/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/52/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 5.14v14l11-7l-11-7Z"
+                      ></path></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/53/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+              <div class="tw-flex tw-gap-px">
+                <div class="tw-grid tw-gap-px tw-grid-cols-3">
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/61/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    /><svg
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 24 24"
+                      width="1.2em"
+                      height="1.2em"
+                      class="tw-absolute drop-shadow-md tw-top-2 tw-right-2"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M8 5.14v14l11-7l-11-7Z"
+                      ></path></svg
+                    >
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/62/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                  <div class="tw-relative tw-text-white tw-text-lg">
+                    <img
+                      src="https://picsum.photos/id/63/200/200"
+                      alt="explore post image"
+                      class="tw-object-cover tw-h-full tw-w-full"
+                    />
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </q-tab-panel>
+        </q-tab-panels>
+      </div>
+    </div>
   </q-page>
 </template>
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from "vue";
 
+const emojis = ["✨", "🔥", "🎉", "🤯", "💅", "🙇‍♂️"];
 export default defineComponent({
-  name: 'ProfilePage',
-  components:{},
-  setup(){
-    return{
-
-    }
+  name: "ProfilePage",
+  setup() {
+    const getRandomEmoji = () => {
+      return emojis[Math.floor(Math.random() * emojis.length)];
+    };
+    return {
+      username: ref("its_anime_thing"),
+      tab: ref("a"),
+      getRandomEmoji,
+    };
   },
-  computed:{
-
-  },
-  mounted(){
-
-  },
-  created(){
-
-  }
-
-})
+  computed: {},
+  mounted() {},
+  created() {},
+});
 </script>
+
