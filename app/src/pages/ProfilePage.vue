@@ -67,6 +67,42 @@
         </div>
       </div>
     </div>
+
+    <div class="tw-px-4 tw-py-1">
+      <div class="tw-text-base tw-font-semibold">
+        Anime Love &#10084; &#65039;
+        <span class="text-black/50 tw-text-sm tw-font-normal">he/him</span>
+      </div>
+      <p class="tw-text-black/80 tw-text-sm">Started at : 4 June 2023</p>
+      <p class="tw-text-black/80 tw-text-sm">Anime Fanpage&#11088;&#9876;</p>
+      <p class="tw-text-black/80 tw-text-sm">Goal : 5k</p>
+      <p class="tw-text-black/80 tw-text-sm">DM for paid promotions</p>
+      <p class="tw-text-black/80 tw-text-sm">Follow for more anime content</p>
+    </div>
+    <div class="tw-px-4 tw-py-1 tw-space-y-1">
+      <q-btn
+        flat
+        class="tw-capitalize tw-bg-gray-100 tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-text-sm tw-text-center tw-w-full hover:bg-black/10 tw-transition-colors tw-outline-none;"
+        type="button"
+        >Edit Profile</q-btn
+      >
+
+      <div class="tw-grid tw-gap-1 tw-grid-cols-2">
+        <q-btn
+          flat
+          type="button"
+          class="tw-capitalize tw-bg-gray-100 tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-text-sm tw-text-center tw-w-full hover:bg-black/10 tw-transition-colors tw-outline-none;"
+          >Add Shop</q-btn
+        >
+        <q-btn
+          flat
+          type="button"
+          class="tw-capitalize tw-bg-gray-100 tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-text-sm tw-text-center tw-w-full hover:bg-black/10 tw-transition-colors tw-outline-none;"
+          >Insights</q-btn
+        >
+        <!-- <q-btn flat type="button" class="tw-bg-gray-100 tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-text-sm tw-text-center tw-w-full hover:bg-black/10 tw-transition-colors tw-outline-none;">Ad Tools</q-btn> -->
+      </div>
+    </div>
   </q-page>
 </template>
 <script>
