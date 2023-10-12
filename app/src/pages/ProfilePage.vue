@@ -39,6 +39,34 @@
         </div>
       </div>
     </div>
+
+    <div class="tw-px-4 tw-py-2 tw-flex tw-justify-between tw-gap-4">
+      <div class="md:tw-w-3/12 md:tw-ml-16">
+        <q-img
+          class="tw-w-20 tw-h-20 md:tw-w-40 md:tw-h-40 tw-object-cover tw-rounded-full tw-border-2 tw-border-pink-600 tw-p-3"
+          src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
+          alt="profile"
+        />
+      </div>
+      <div
+        class="tw-flex text-[15px] tw-items-center tw-space-x-4 tw-flex-grow tw-justify-center"
+      >
+        <div class="tw-leading-tight tw-text-center">
+          <h3 class="tw-font-medium">26</h3>
+          <span>Posts</span>
+        </div>
+
+        <div class="tw-leading-tight tw-text-center">
+          <h3 class="tw-font-medium">573</h3>
+          <span>Followers</span>
+        </div>
+
+        <div class="tw-leading-tight tw-text-center">
+          <h3 class="tw-font-medium">432</h3>
+          <span>Following</span>
+        </div>
+      </div>
+    </div>
   </q-page>
 </template>
 <script>
