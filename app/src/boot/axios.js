@@ -1,24 +1,42 @@
 import { boot } from 'quasar/wrappers'
 import axios from 'axios'
 
-// Be careful when using SSR for cross-request state pollution
-// due to creating a Singleton instance here;
-// If any client changes this (global) instance, it might be a
-// good idea to move this instance creation inside of the
-// "export default () => {}" function below (which runs individually
-// for each client)
-const api = axios.create({ baseURL: 'https://api.example.com' })
+import { authStore } from 'src/stores/auth'
+import { Cookies } from 'quasar'
 
-export default boot(({ app }) => {
-  // for use inside Vue files (Options API) through this.$axios and this.$api
+const api = axios.create({
+  baseURL: '/api',
+   withCredentials: true,
+})
+api.defaults.headers.post['Content-Type'] = 'application/json';
+api.defaults.headers.delete['Content-Type'] = 'application/json';
 
-  app.config.globalProperties.$axios = axios
-  // ^ ^ ^ this will allow you to use this.$axios (for Vue Options API form)
-  //       so you won't necessarily have to import axios in each vue file
+export default boot(({app,router}) => {
+  const auth_store = authStore()
+  api.interceptors.response.use((response) => {
+    return response;
+  },
+  (error) => {
+    console.error(error);
+    if (error.response.status === 401) {
+      auth_store.clearSession();
+      router.push('/login')
+      return new Promise(() => {
+      });
+    }
+    else{
+      return Promise.reject(error);
+    }
+  });
 
-  app.config.globalProperties.$api = api
-  // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
-  //       so you can easily perform requests against your app's API
+  api.interceptors.request.use((request) => {
+    request.headers['X-CSRFToken'] = Cookies.get('_csrf_token');
+    return request;
+  });
+
+
+  app.config.globalProperties.$axios = api
 })
 
 export { api }
+

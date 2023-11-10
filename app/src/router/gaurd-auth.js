@@ -5,7 +5,7 @@ import { authStore } from 'src/stores/auth';
 export const guard_auth = (to, from, next) => {
   const auth_store = authStore()
   function auth(callback){
-    api.get('/api/auth/').then(response=>{
+    api.get('/auth/').then(response=>{
       if(response.data.ok){
         callback(true)
       }else{
