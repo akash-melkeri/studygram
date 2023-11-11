@@ -54,7 +54,7 @@
               flat
               dense
               no-caps
-              @click="dialog_signup = true"
+              @click="dialogs.signup = true"
               label="Create an account"
               color="primary"
               class="tw-rounded-md"
@@ -72,7 +72,7 @@
         </q-form>
       </q-card-section>
     </q-card>
-    <q-dialog v-model="dialog_signup" maximized>
+    <q-dialog v-model="dialogs.signup" maximized>
       <q-card>
         <div class="tw-drop-shadow-sm tw-w-full tw-flex tw-items-center">
           <q-btn
@@ -219,6 +219,28 @@
         </q-form>
       </q-card>
     </q-dialog>
+    <q-dialog v-model="dialogs.after_signup">
+      <q-card class="tw-relative tw-w-full tw-rounded-xl tw-overflow-hidden">
+        <q-card-section class="tw-text-xl tw-text-center">
+          Signup Successful
+        </q-card-section>
+        <q-separator/>
+        <q-card-section class="tw-flex tw-flex-col tw-gap-4">
+          <div class="tw-text-center">
+            <q-icon size="8rem" name="verified" color="positive" />
+          </div>
+          <div class="tw-text-center tw-text-gray-700">
+            You have successfully signup. Please login to continue.
+          </div>
+          <q-btn
+              label="Continue to login"
+              color="primary"
+              class="tw-rounded-md tw-w-full"
+              @click="dialogs.after_signup = false"
+            ></q-btn>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 <script>
@@ -245,7 +267,10 @@ export default defineComponent({
       errors: ref({
         username_availability: ""
       }),
-      dialog_signup: ref(true)
+      dialogs:ref({
+        signup:false,
+        after_signup:false,
+      }),
     };
   },
   computed: {},
