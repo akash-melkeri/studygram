@@ -7,6 +7,7 @@ export const guard_auth = (to, from, next) => {
   function auth(callback){
     api.get('/auth/').then(response=>{
       if(response.data.ok){
+        auth_store.setSession(response.data.session_data)
         callback(true)
       }else{
         callback(false)

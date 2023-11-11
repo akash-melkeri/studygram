@@ -10,7 +10,9 @@ export const authStore = defineStore('auth', {
     },
   }),
   getters: {
-    isLoggedIn:(state) => state.session.is_logged_in
+    sessionData:(state) => state.session,
+    isLoggedIn:(state) => state.session.is_logged_in,
+    newUser:(state) => state.session.extra_details?.new_user || false,
   },
   actions: {
     setSession(data){
