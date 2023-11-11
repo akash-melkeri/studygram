@@ -5,7 +5,7 @@
         class="tw-p-4 tw-flex tw-border-b tw-border-black/10 tw-items-center tw-gap-4 tw-justify-between"
       >
         <h1 class="tw-font-semibold tw-text-xl">
-          {{ username || 'test_username' }}
+          {{ username || "test_username" }}
           <q-icon size="md" name="expand_more" />
         </h1>
 
@@ -33,7 +33,7 @@
               ></path>
             </g>
           </svg>
-          <q-btn flat icon="menu">
+          <q-btn flat icon="menu" @click="logout">
             <q-badge color="red" label="" rounded floating>2</q-badge>
           </q-btn>
         </div>
@@ -165,8 +165,8 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -191,11 +191,10 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -236,11 +235,10 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -266,7 +264,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -292,7 +289,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -318,8 +314,8 @@
                       <path
                         fill="currentColor"
                         d="M8 5.14v14l11-7l-11-7Z"
-                      ></path></svg
-                    >
+                      ></path>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -329,7 +325,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -348,8 +343,8 @@
                       <path
                         fill="currentColor"
                         d="M8 5.14v14l11-7l-11-7Z"
-                      ></path></svg
-                    >
+                      ></path>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -366,12 +361,11 @@
                     />
                   </div>
                 </div>
-                
               </div>
             </div>
           </q-tab-panel>
 
-          <q-tab-panel name="b"  class="q-pa-none">
+          <q-tab-panel name="b" class="q-pa-none">
             <div class="tw-space-y-px tw-pt-1 tw-pb-16">
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -405,8 +399,8 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -431,11 +425,10 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -476,11 +469,10 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -506,7 +498,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -532,7 +523,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -558,8 +548,8 @@
                       <path
                         fill="currentColor"
                         d="M8 5.14v14l11-7l-11-7Z"
-                      ></path></svg
-                    >
+                      ></path>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -569,7 +559,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -588,8 +577,8 @@
                       <path
                         fill="currentColor"
                         d="M8 5.14v14l11-7l-11-7Z"
-                      ></path></svg
-                    >
+                      ></path>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -606,12 +595,11 @@
                     />
                   </div>
                 </div>
-                
               </div>
             </div>
           </q-tab-panel>
 
-          <q-tab-panel name="c"  class="q-pa-none">
+          <q-tab-panel name="c" class="q-pa-none">
             <div class="tw-space-y-px tw-pt-1 tw-pb-16">
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -645,8 +633,8 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -671,11 +659,10 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -716,11 +703,10 @@
                         <path
                           d="M17 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2"
                         ></path>
-                      </g></svg
-                    >
+                      </g>
+                    </svg>
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -746,7 +732,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -772,7 +757,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -798,8 +782,8 @@
                       <path
                         fill="currentColor"
                         d="M8 5.14v14l11-7l-11-7Z"
-                      ></path></svg
-                    >
+                      ></path>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -809,7 +793,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
               <div class="tw-flex tw-gap-px">
                 <div class="tw-grid tw-gap-px tw-grid-cols-3">
@@ -828,8 +811,8 @@
                       <path
                         fill="currentColor"
                         d="M8 5.14v14l11-7l-11-7Z"
-                      ></path></svg
-                    >
+                      ></path>
+                    </svg>
                   </div>
                   <div class="tw-relative tw-text-white tw-text-lg">
                     <img
@@ -846,7 +829,6 @@
                     />
                   </div>
                 </div>
-                
               </div>
             </div>
           </q-tab-panel>
@@ -868,12 +850,37 @@ export default defineComponent({
     return {
       username: ref("its_anime_thing"),
       tab: ref("a"),
-      getRandomEmoji,
+      getRandomEmoji
     };
   },
   computed: {},
+  methods: {
+    logout() {
+      this.$api
+        .post("/auth/logout")
+        .then((response) => {
+          if (response.data.ok) {
+            this.$q.notify({
+              type: "positive",
+              message: response.data.message
+            })
+          } else {
+            this.$q.notify({
+              type: "negative",
+              message: response.data.message
+            });
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          this.$q.notify({
+            type: "negative",
+            message: "Unknown Error occured!"
+          });
+        });
+    }
+  },
   mounted() {},
-  created() {},
+  created() {}
 });
 </script>
-

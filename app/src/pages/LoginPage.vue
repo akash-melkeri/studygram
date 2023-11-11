@@ -342,6 +342,7 @@ export default defineComponent({
               type: "positive",
               message: response.data.message
             });
+            this.$store.auth.setSession(response.data.session_data)
           } else {
             this.$q.notify({
               type: "negative",
