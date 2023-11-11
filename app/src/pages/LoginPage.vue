@@ -23,22 +23,24 @@
       <q-card-section>
         <q-form class="tw-flex tw-flex-col tw-gap-4">
           <q-input
-            v-model="form_data.username"
+            v-model="login_form_data.username"
             label="Username"
             outlined
             :rules="[val => !!val || 'Username is required']"
             lazy-rules
             ref="login_username"
+            hint="Enter your username"
           ></q-input>
 
           <q-input
-            v-model="form_data.password"
+            v-model="login_form_data.password"
             label="Password"
             type="password"
             outlined
             :rules="[val => !!val || 'Password is required']"
             lazy-rules
             ref="login_password"
+            hint="Enter your password"
           ></q-input>
           <div class="tw-flex tw-flex-col tw-gap-2">
 
@@ -80,7 +82,7 @@
         <div>
           <div class="tw-p-4 tw-flex tw-flex-col tw-gap-6">
             <q-input
-              v-model="form_data.username"
+              v-model="signup_form_data.username"
               label="Username"
               outlined
               hint="Type a unique username"
@@ -89,7 +91,7 @@
               ref="signup_username"
             ></q-input>
             <q-input
-              v-model="form_data.password"
+              v-model="signup_form_data.password"
               label="Password"
               type="password"
               outlined
@@ -99,7 +101,7 @@
               ref="signup_password"
             ></q-input>
             <q-input
-              v-model="form_data.password"
+              v-model="signup_form_data.confirm_password"
               label="Confirm password"
               type="password"
               outlined
@@ -129,20 +131,60 @@ export default defineComponent({
   components: {},
   setup() {
     return {
-      form_data: ref({
+      login_form_data: ref({
         username: "",
         password: ""
       }),
-      dialog_signup:ref(false),
+      signup_form_data: ref({
+        username: "",
+        password: ""
+      }),
+      dialog_signup:ref(true),
     };
   },
   computed: {},
   methods: {
     submitCreateForm(){
-
+      this.$api.post('/auth/signup',this.signup_form_data).then(response=>{
+        if(response.data.ok){
+          this.$q.notify({
+            type:'positive',
+            message:response.data.message
+          })
+        }else{
+          this.$q.notify({
+            type:'negative',
+            message:response.data.message
+          })
+        }
+      }).catch(error=>{
+        console.error(error);
+        this.$q.notify({
+          type:'negative',
+          message:"Unknown Error occured!"
+        })
+      })
     },
     submitLoginForm(){
-
+      this.$api.post('/auth/login',this.login_form_data).then(response=>{
+        if(response.data.ok){
+          this.$q.notify({
+            type:'positive',
+            message:response.data.message
+          })
+        }else{
+          this.$q.notify({
+            type:'negative',
+            message:response.data.message
+          })
+        }
+      }).catch(error=>{
+        console.error(error);
+        this.$q.notify({
+          type:'negative',
+          message:"Unknown Error occured!"
+        })
+      })
     },
   },
   mounted() {
