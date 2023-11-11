@@ -21,11 +21,14 @@
         </div>
       </q-card-section>
       <q-card-section>
-        <q-form @submit="login" class="tw-flex tw-flex-col tw-gap-4">
+        <q-form class="tw-flex tw-flex-col tw-gap-4">
           <q-input
             v-model="form_data.username"
             label="Username"
             outlined
+            :rules="[val => !!val || 'Username is required']"
+            lazy-rules
+            ref="login_username"
           ></q-input>
 
           <q-input
@@ -33,19 +36,23 @@
             label="Password"
             type="password"
             outlined
+            :rules="[val => !!val || 'Password is required']"
+            lazy-rules
+            ref="login_password"
           ></q-input>
           <div class="tw-flex tw-flex-col tw-gap-2">
 
             <q-btn
-              type="submit"
               label="Login"
               color="primary"
               class="tw-rounded-md"
+              @click="submitLoginForm"
             ></q-btn>
             <q-btn
               flat
               dense
               no-caps
+              @click="dialog_signup = true"
               label="Create an account"
               color="primary"
               class="tw-rounded-md"
@@ -54,14 +61,64 @@
               flat
               dense
               no-caps
+              disable
               label="Forgot Password ?"
-              color="primary"
+              color="grey"
               class="tw-rounded-md"
             ></q-btn>
           </div>
         </q-form>
       </q-card-section>
     </q-card>
+    <q-dialog v-model="dialog_signup" maximized>
+      <q-card>
+        <div class="tw-drop-shadow-sm tw-w-full tw-flex tw-items-center" >
+          <q-btn icon="close" class="tw-h-12 tw-w-12" flat dense v-close-popup></q-btn>
+          <div class="tw-text-bold tw-text-xl">Create New Account</div>
+        </div>
+        <q-separator />
+        <div>
+          <div class="tw-p-4 tw-flex tw-flex-col tw-gap-6">
+            <q-input
+              v-model="form_data.username"
+              label="Username"
+              outlined
+              hint="Type a unique username"
+              :rules="[val => !!val || 'Username is required']"
+              lazy-rules
+              ref="signup_username"
+            ></q-input>
+            <q-input
+              v-model="form_data.password"
+              label="Password"
+              type="password"
+              outlined
+              hint="Create a strong password"
+              :rules="[val => !!val || 'Password is required']"
+              lazy-rules
+              ref="signup_password"
+            ></q-input>
+            <q-input
+              v-model="form_data.password"
+              label="Confirm password"
+              type="password"
+              outlined
+              :rules="[val => !!val || 'Password confirmation is required']"
+              lazy-rules
+              ref="signup_password"
+            ></q-input>
+          </div>
+          <div class="tw-p-4">
+            <q-btn
+              label="Create account"
+              color="primary"
+              class="tw-rounded-md tw-w-full"
+              @click="submitCreateForm"
+            ></q-btn>
+          </div>
+        </div>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 <script>
@@ -75,12 +132,24 @@ export default defineComponent({
       form_data: ref({
         username: "",
         password: ""
-      })
+      }),
+      dialog_signup:ref(false),
     };
   },
   computed: {},
-  mounted() {},
-  created() {}
+  methods: {
+    submitCreateForm(){
+
+    },
+    submitLoginForm(){
+
+    },
+  },
+  mounted() {
+  },
+  created() {
+    console.log(this.$route);
+  }
 });
 </script>
 <style>
