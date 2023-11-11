@@ -43,8 +43,14 @@ const routes = [
     ]
   },
   {
-    path: '/login',
-    component: () => import('pages/LoginPage.vue')
+    path: "/",
+    component: () => import('layouts/PublicLayout.vue'),
+    children: [
+      {
+        path: "/login",
+        component: () => import("pages/LoginPage.vue"),
+      },
+    ],
   },
   {
     path: '/:catchAll(.*)*',
