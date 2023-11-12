@@ -113,7 +113,7 @@
             </div>
             <div>
               <!-- {{ item }} -->
-              <div class="tw-flex tw-justify-between tw-p-2">
+              <div class="tw-flex tw-justify-between tw-px-2 tw-py-1.5">
                 <div class="tw-flex tw-gap-3">
                   <svg v-if="item.is_liked" xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7 tw-text-red-500" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.222 5.364A6.002 6.002 0 0 1 12 4.758a6.002 6.002 0 0 1 7.778 9.091l-5.657 5.657a3 3 0 0 1-4.242 0L4.222 13.85a6 6 0 0 1 0-8.485Z" clip-rule="evenodd"/></svg>
                   <svg v-else xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.071 13.142L13.414 18.8a2 2 0 0 1-2.828 0l-5.657-5.657A5 5 0 1 1 12 6.072a5 5 0 0 1 7.071 7.07Z"/></svg>
@@ -125,17 +125,26 @@
                   <svg v-else xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 3H8a2 2 0 0 0-2 2v16l6-3l6 3V5a2 2 0 0 0-2-2Z"/></svg>
                 </div>
               </div>
-              <div>
-                <div>Likes</div>
-                <div>
-                  <div>Username</div>
-                  <div>Caption</div>
+              <div class="tw-px-2">
+                <div class="">
+                  {{ item.likes_count }} likes
+                </div>
+                <div class="tw-flex tw-gap-2">
+                  <div class="tw-shrink-0">Username</div>
+                  <div class="tw-font-light tw-grow  tw-flex">
+                    <div class="tw-w-1/2 tw-grow-0 ellipsis tw-overflow-hidden">
+                      CaptionCaptionCaptionCaptionCaptionCaptionCaptionCaptionCaption
+                    </div>
+                    <div class="tw-grow tw-font-bold tw-text-gray-500">
+                      More
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div>
+              <div class="tw-text-gray-500 tw-px-2">
                 View comments
               </div>
-              <div>4 Days Ago</div>
+              <div class="tw-px-2 tw-text-[0.7em] tw-text-gray-400 tw-uppercase">4 Days Ago</div>
             </div>
           </div>
         </template>
@@ -179,6 +188,58 @@ export default defineComponent({
             },
           ],
         },
+        {
+          id:'111',
+          name:'knowledge_page',
+          profile_picture:'https://www.nicepng.com/png/detail/10-101646_borrow-library-books-book-stack-books-icon.png',
+          likes_count:292262,
+          is_liked:true,
+          is_saved:true,
+          slide:0,
+          contents:[
+            {
+              id:'1111',
+              type:'image',
+              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
+            },
+            {
+              id:'1111',
+              type:'image',
+              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
+            },
+            {
+              id:'1111',
+              type:'image',
+              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
+            },
+          ],
+        },
+        {
+          id:'111',
+          name:'knowledge_page',
+          profile_picture:'https://www.nicepng.com/png/detail/10-101646_borrow-library-books-book-stack-books-icon.png',
+          likes_count:292262,
+          is_liked:true,
+          is_saved:true,
+          slide:0,
+          contents:[
+            {
+              id:'1111',
+              type:'image',
+              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
+            },
+            {
+              id:'1111',
+              type:'image',
+              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
+            },
+            {
+              id:'1111',
+              type:'image',
+              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
+            },
+          ],
+        },
       ])
     }
   },
@@ -196,5 +257,14 @@ export default defineComponent({
 <style>
 .post .q-carousel__slide{
   padding:0 !important;
+}
+.post .q-carousel__navigation .q-btn{
+  margin:0;
+  padding:0;
+}
+.post .q-btn--dense.q-btn--round{
+  padding:0 2px;
+  min-width: 0;
+  min-height: 0;
 }
 </style>
