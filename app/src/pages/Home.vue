@@ -64,10 +64,13 @@
           </div>
         </div>
       </div>
-      <div>
+      <div v-if="posts.length">
         <template v-for="item in posts" :key="item.id">
           <Post :data="item" />
         </template>
+      </div>
+      <div v-else class="tw-text-center tw-text-gray-500 tw-py-4">
+        No posts for you
       </div>
     </q-page>
   </div>
