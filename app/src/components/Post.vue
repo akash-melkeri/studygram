@@ -28,14 +28,38 @@
         control-color="grey-5"
         navigation
         arrows
+        ref="carousel"
         class="tw-h-auto tw-p-0"
       >
         <q-carousel-slide v-for="(content,index) in data.contents" :name="index" :key="content.id" class="tw-min-h-min">
           <q-img v-if="content.type == 'image'" :src="content.url" class="tw-w-full "></q-img>
         </q-carousel-slide>
         <template v-slot:navigation-icon="{ active, btnProps, onClick }">
-          <q-btn v-if="active" size="0.5em" :icon="btnProps.icon" color="blue-6" flat round dense @click="onClick" />
-          <q-btn v-else size="0.5em" :icon="btnProps.icon" color="grey-5" flat round dense @click="onClick" />
+          <q-btn v-if="active" size="0.5em" :icon="btnProps.icon" class="tw-text-blue-500/90" flat round dense @click="onClick" />
+          <q-btn v-else size="0.5em" :icon="btnProps.icon" class="tw-text-white/70" flat round dense @click="onClick" />
+        </template>
+        <template v-slot:control>
+
+          <q-carousel-control
+            position="left"
+            :offset="[18, 0]"
+            class="tw-h-full tw-flex tw-flex-col tw-justify-center"
+          >
+            <q-btn
+              round dense class="tw-bg-white/50 tw-text-black" icon="chevron_left"
+              @click="$refs.carousel.previous()"
+            />
+          </q-carousel-control>
+          <q-carousel-control
+            position="right"
+            :offset="[18, 0]"
+            class="tw-h-full tw-flex tw-flex-col tw-justify-center"
+          >
+            <q-btn
+            round dense class="tw-bg-white/50 tw-text-black" icon="chevron_right"
+              @click="$refs.carousel.next()"
+            />
+          </q-carousel-control>
         </template>
       </q-carousel>
       <!-- <q-btn icon="chevron_left" size="0.8em" dense rounded flat class="tw-shadow-sm tw-absolute tw-left-3 tw-top-[50%] tw-bg-gray-100 tw-opacity-60 tw-translate-y-[-50%]" />
@@ -115,11 +139,11 @@ export default defineComponent({
   padding:0 !important;
 }
 .post .q-carousel__navigation .q-btn{
-  margin:0;
+  margin:0 2px;
   padding:0;
 }
 .post .q-btn--dense.q-btn--round{
-  padding:0 2px;
+  padding:0 0px;
   min-width: 0;
   min-height: 0;
 }
