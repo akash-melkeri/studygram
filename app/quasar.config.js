@@ -103,7 +103,13 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
     framework: {
-      config: {},
+      config: {
+        loading:{
+          spinner:'QSpinnerHourglass',
+          spinnerSize:40,
+          boxClass:'tw-bg-white tw-text-gray-600 tw-rounded-xl',
+        }
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
@@ -120,6 +126,7 @@ module.exports = configure(function (/* ctx */) {
         'Dialog',
         'LocalStorage',
         'Notify',
+        'Loading',
       ]
     },
 

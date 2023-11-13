@@ -343,6 +343,7 @@ export default defineComponent({
               message: response.data.message
             });
             this.$store.auth.setSession(response.data.session_data)
+            this.$router.push(this.$route.query?.redirect || '/home')
           } else {
             this.$q.notify({
               type: "negative",

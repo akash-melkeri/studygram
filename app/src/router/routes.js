@@ -50,6 +50,13 @@ const routes = [
         path: "/login",
         component: () => import("pages/LoginPage.vue"),
       },
+      {
+        path: "/update-profile",
+        component: () => import("pages/UpdateProfilePage.vue"),
+        meta:{
+          requiresAuth:true,
+        }
+      },
     ],
   },
   {
