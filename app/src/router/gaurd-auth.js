@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { api } from 'boot/axios'
 import { authStore } from 'src/stores/auth';
 

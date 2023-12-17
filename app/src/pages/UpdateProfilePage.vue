@@ -82,7 +82,7 @@
             hint="You can add your nickname"
             :rules="[
               (val) =>
-                val.length < 31 ||
+                (val && val.length < 31) ||
                 'Name must have less than 30 characters',
               (val) =>
                 /^[a-zA-Z_.][a-zA-Z0-9_.]*$/.test(val) ||
@@ -99,12 +99,7 @@
             outlined
             :autocomplete="false"
             hint="Describe Yourself"
-            :rules="[
-              (val) => !!val || 'Password confirmation is required',
-              (val) =>
-                val == profile_form_data.password ||
-                'Passwords are not matching'
-            ]"
+            :rules="[]"
             lazy-rules
             ref="signup_confirm_password"
           >
@@ -112,10 +107,10 @@
         </div>
         <div class="tw-p-4">
           <q-btn
-            label="Create account"
+            label="Update Profile"
+            icon-right="check"
             color="primary"
             class="tw-rounded-md tw-w-full"
-            @click="submitUpdateForm"
           ></q-btn>
         </div>
       </q-form>
@@ -130,6 +125,12 @@ export default defineComponent({
   components:{},
   setup(){
     return{
+      prev_profile_values:ref({
+        username: "",
+        display_name: "",
+        bio: "",
+        profile_picture:null,
+      }),
       profile_form_data: ref({
         username: "",
         display_name: "",
@@ -234,7 +235,7 @@ export default defineComponent({
       delete payload.profile_picture
       let self = this
       self.$q.loading.show({message:"Updating"})
-      self.$axios.patch('/player/update-profile',payload).then(response=>{
+      self.$api.patch('/user/update-profile',payload).then(response=>{
         if(response.data.ok){
           self.$q.notify({
             message:'Profile updated',
@@ -242,7 +243,7 @@ export default defineComponent({
             timeout: 1500,
           })
           self.$q.loading.hide()
-          this.$router.go('/profile')
+          this.$router.replace('/profile')
         }else{
           self.$q.notify({
             message:response.data.message,
@@ -263,7 +264,7 @@ export default defineComponent({
     fetch_profile(){
       let self = this
       this.$q.loading.show({message:'Loading'})
-      self.$axios.get('/player/fetch-profile').then(response=>{
+      self.$api.get('/user/fetch-profile').then(response=>{
         if(response.data.ok){
           self.profile = response.data.profile
         }else{
@@ -279,11 +280,10 @@ export default defineComponent({
         self.$q.loading.hide()
       })
     },
-
     upload_avatar(payload){
       let self = this
       self.$q.loading.show({message:"Uploading"})
-      self.$axios.patch('/user/update-profile-picture',payload).then(response=>{
+      self.$api.patch('/user/update-profile-picture',payload).then(response=>{
         if(response.data.ok){
           self.$q.notify({
             message:'Avatar updated',
@@ -307,12 +307,24 @@ export default defineComponent({
         self.$q.loading.hide()
       })
     },
+    set_profile_values(){
+      this.profile_form_data.username = this.$store.auth.sessionData.username
+      this.profile_form_data.display_name = this.$store.auth.sessionData.display_name
+      this.profile_form_data.bio = this.$store.auth.sessionData.bio
+      this.profile_form_data.profile_picture = null
+
+      this.prev_profile_values.username = this.$store.auth.sessionData.username
+      this.prev_profile_values.display_name = this.$store.auth.sessionData.display_name
+      this.prev_profile_values.bio = this.$store.auth.sessionData.bio
+
+    },
   },
   mounted(){
 
   },
   created(){
-
+    // this.fetch_profile()
+    this.set_profile_values()
   }
 
 })
