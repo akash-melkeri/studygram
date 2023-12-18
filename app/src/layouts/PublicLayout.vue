@@ -2,7 +2,7 @@
 
 <template>
   <q-layout view="lHr LpR lFr">
-    <q-page-container>
+    <q-page-container class="tw-max-w-md tw-mx-auto tw-overflow-hidden">
       <router-view class="tw-max-w-md tw-mx-auto" />
     </q-page-container>
   </q-layout>

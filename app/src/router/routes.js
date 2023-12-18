@@ -40,6 +40,13 @@ const routes = [
           requiresAuth:true,
         }
       },
+      {
+        path: '/post/:id',
+        component: () => import('pages/PostPage.vue'),
+        meta:{
+          requiresAuth:true,
+        }
+      },
     ]
   },
   {

@@ -33,8 +33,12 @@
         @doubletap="double_click"
 
       >
-        <q-carousel-slide v-for="(content,index) in data.contents" :name="index" :key="content.id" class="tw-min-h-min">
+        <q-carousel-slide v-for="(content,index) in data.contents" :name="index" :key="content.id" class="tw-min-h-min tw-relative">
+          <div class="tw-h-full tw-w-full tw-absolute tw-z-[9999] tw-flex tw-items-center tw-justify-center">
+            <svg v-if="heart_visible" xmlns="http://www.w3.org/2000/svg" class="  tw-w-20 tw-h-20 tw-text-red-500 tw-animate-ping" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.222 5.364A6.002 6.002 0 0 1 12 4.758a6.002 6.002 0 0 1 7.778 9.091l-5.657 5.657a3 3 0 0 1-4.242 0L4.222 13.85a6 6 0 0 1 0-8.485Z" clip-rule="evenodd"/></svg>
+          </div>
           <q-img v-if="content.type == 'image'" :src="content.url" class="tw-w-full "></q-img>
+
         </q-carousel-slide>
         <template v-if="data.contents.length > 1" v-slot:navigation-icon="{ active, btnProps, onClick }">
           <q-btn v-if="active" size="0.5em" :icon="btnProps.icon" class="tw-hidden tw-text-blue-500/90" flat round dense @click="onClick" />
@@ -73,19 +77,19 @@
       <!-- {{ item }} -->
       <div class="tw-flex tw-justify-between tw-px-2 tw-py-1.5">
         <div class="tw-flex tw-gap-3">
-          <svg v-if="data.is_liked" xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7 tw-text-red-500" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.222 5.364A6.002 6.002 0 0 1 12 4.758a6.002 6.002 0 0 1 7.778 9.091l-5.657 5.657a3 3 0 0 1-4.242 0L4.222 13.85a6 6 0 0 1 0-8.485Z" clip-rule="evenodd"/></svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.071 13.142L13.414 18.8a2 2 0 0 1-2.828 0l-5.657-5.657A5 5 0 1 1 12 6.072a5 5 0 0 1 7.071 7.07Z"/></svg>
+          <svg @click="double_click" v-if="data.is_liked || likes_count" xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7 tw-text-red-500" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M4.222 5.364A6.002 6.002 0 0 1 12 4.758a6.002 6.002 0 0 1 7.778 9.091l-5.657 5.657a3 3 0 0 1-4.242 0L4.222 13.85a6 6 0 0 1 0-8.485Z" clip-rule="evenodd"/></svg>
+          <svg @click="double_click" v-else xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.071 13.142L13.414 18.8a2 2 0 0 1-2.828 0l-5.657-5.657A5 5 0 1 1 12 6.072a5 5 0 0 1 7.071 7.07Z"/></svg>
           <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0-9-9c0 1.488.36 2.891 1 4.127L3 21l4.873-1c1.236.64 2.64 1 4.127 1Z"/></svg>
           <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l-.604-5.437C4.223 5.007 5.825 3.864 7.24 4.535l11.944 5.658c1.525.722 1.525 2.892 0 3.614L7.24 19.465c-1.415.67-3.017-.472-2.844-2.028L5 12Zm0 0h7"/></svg>
         </div>
-        <div>
-          <svg v-if="data.is_saved" xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 2a3 3 0 0 0-3 3v16a1 1 0 0 0 1.447.894L12 19.118l5.553 2.776A1 1 0 0 0 19 21V5a3 3 0 0 0-3-3H8Z" clip-rule="evenodd"/></svg>
+        <div @click="save_clicked">
+          <svg v-if="data.is_saved || is_saved" xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M8 2a3 3 0 0 0-3 3v16a1 1 0 0 0 1.447.894L12 19.118l5.553 2.776A1 1 0 0 0 19 21V5a3 3 0 0 0-3-3H8Z" clip-rule="evenodd"/></svg>
           <svg v-else xmlns="http://www.w3.org/2000/svg" class="tw-w-7 tw-h-7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 3H8a2 2 0 0 0-2 2v16l6-3l6 3V5a2 2 0 0 0-2-2Z"/></svg>
         </div>
       </div>
       <div class="tw-px-2">
         <div class="">
-          {{ data.likes_count }} likes
+          {{ data.likes_count + likes_count }} likes
         </div>
         <div class="tw-flex tw-gap-2">
           <div class="tw-shrink-0">Username</div>
@@ -124,12 +128,25 @@ export default defineComponent({
   setup(){
     return{
       slide:ref(0),
+      heart_visible:ref(false),
+      likes_count:ref(0),
+      is_saved:ref(false)
     }
   },
   methods:{
     double_click(){
-      console.log('here')
-      console.log("okok");
+      this.heart_visible = true
+      setTimeout(()=>{
+        this.heart_visible = false
+      }, 1000)
+      if(this.likes_count){
+        this.likes_count -= 1
+      }else{
+        this.likes_count += 1
+      }
+    },
+    save_clicked(){
+      this.is_saved = !this.is_saved
     },
   },
   mounted(){

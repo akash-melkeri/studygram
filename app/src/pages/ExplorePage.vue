@@ -57,8 +57,8 @@
         <template v-for="item in new_posts" :key="item._id">
           post
         </template>
-        <template v-for="item in demo_posts" :key="item._id">
-          <div class="tw-aspect-square tw-overflow-hidden tw-flex tw-items-center tw-justify-center">
+        <template v-for="item,index in demo_posts" :key="item._id">
+          <div @click="$router.push('/post/'+index)" class="tw-aspect-square tw-overflow-hidden tw-flex tw-items-center tw-justify-center">
             <q-img class="tw-w-full tw-h-full" fit="cover" :src="item.contents[0].url"></q-img>
           </div>
         </template>

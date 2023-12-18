@@ -33,7 +33,7 @@
               ></path>
             </g>
           </svg>
-          <q-btn flat icon="menu" @click="logout">
+          <q-btn flat icon="menu" @click="open_menu=true">
             <q-badge color="red" label="" rounded floating>2</q-badge>
           </q-btn>
         </div>
@@ -43,7 +43,7 @@
     <div class="tw-px-4 tw-py-2 tw-flex tw-justify-between tw-gap-4">
       <div class="md:tw-w-3/12 md:tw-ml-16">
         <q-img
-          class="tw-w-20 tw-h-20 md:tw-w-40 md:tw-h-40 tw-object-cover tw-rounded-full tw-border-2 tw-border-pink-600 tw-p-3"
+          class="tw-w-20 tw-h-20 tw-object-cover tw-rounded-full tw-border-2 tw-border-pink-600 tw-p-3"
           src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
           alt="profile"
         />
@@ -83,7 +83,7 @@
       <q-btn
         flat
         class="tw-capitalize tw-bg-gray-100 tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-text-sm tw-text-center tw-w-full hover:bg-black/10 tw-transition-colors tw-outline-none;"
-        type="button"
+        type="button" @click="$router.push('/update-profile')"
         >Edit Profile</q-btn
       >
 
@@ -835,6 +835,34 @@
         </q-tab-panels>
       </div>
     </div>
+    <q-dialog v-model="open_menu" position="bottom">
+      <q-card >
+        <q-item clickable v-ripple @click="logout">
+          <q-item-section side>
+            <q-icon name="logout" color="black"></q-icon>
+          </q-item-section>
+          <q-item-section class="tw-text-lg tw-font-bold">
+            Logout
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section side>
+            <q-icon name="inbox" color="black"></q-icon>
+          </q-item-section>
+          <q-item-section class="tw-text-lg tw-font-bold">
+            Archive
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple>
+          <q-item-section side>
+            <q-icon name="settings" color="black"></q-icon>
+          </q-item-section>
+          <q-item-section class="tw-text-lg tw-font-bold">
+            Settings
+          </q-item-section>
+        </q-item>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 <script>
@@ -848,6 +876,7 @@ export default defineComponent({
       return emojis[Math.floor(Math.random() * emojis.length)];
     };
     return {
+      open_menu:ref(false),
       username: ref("its_anime_thing"),
       tab: ref("a"),
       getRandomEmoji
@@ -864,6 +893,8 @@ export default defineComponent({
               type: "positive",
               message: response.data.message
             })
+            this.$store.auth.clearSession()
+            this.$router.push('/login')
           } else {
             this.$q.notify({
               type: "negative",

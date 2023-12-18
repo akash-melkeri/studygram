@@ -112,6 +112,7 @@
             icon-right="check"
             color="primary"
             class="tw-rounded-md tw-w-full"
+            @click="$router.replace('/home')"
           ></q-btn>
         </div>
       </q-form>
