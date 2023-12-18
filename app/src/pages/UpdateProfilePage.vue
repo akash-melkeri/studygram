@@ -7,6 +7,7 @@
         flat
         dense
         v-close-popup
+        @click="$router.go(-1)"
       ></q-btn>
       <div class="tw-text-bold tw-text-xl">Update Profile</div>
     </div>

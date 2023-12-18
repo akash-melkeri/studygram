@@ -36,7 +36,7 @@
       </q-toolbar>
     </q-header>
     <q-page class="">
-      <div v-if="$store.auth.newUser" class="tw-p-2">
+      <div v-if="$store.auth.newUser" class="tw-p-2 tw-hidden">
         <div>
           <div class="tw-text-lg tw-font-bold tw-flex tw-justify-between">
             <div>
