@@ -65,7 +65,7 @@
         </div>
       </div>
       <div v-if="posts.length">
-        <template v-for="item in posts" :key="item.id">
+        <template v-for="item in posts" :key="item._id">
           <Post :data="item" />
         </template>
       </div>
@@ -79,6 +79,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 import Post from 'src/components/Post.vue'
+import demo_posts from '../../public/data/demo_posts.json'
 
 export default defineComponent({
   name: 'IndexPage',
@@ -87,86 +88,7 @@ export default defineComponent({
   },
   setup(){
     return{
-      posts:ref([
-        {
-          id:'111',
-          name:'knowledge_page',
-          profile_picture:'https://www.nicepng.com/png/detail/10-101646_borrow-library-books-book-stack-books-icon.png',
-          likes_count:292262,
-          is_liked:true,
-          is_saved:true,
-          slide:0,
-          contents:[
-            {
-              id:'1111',
-              type:'image',
-              url:"https://www.global-itech.com/wp-content/uploads/2020/04/javaScriptIcon-768x870.jpeg"
-            },
-            {
-              id:'1111',
-              type:'image',
-              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
-            },
-            {
-              id:'1111',
-              type:'image',
-              url:"https://source.wustl.edu/wp-content/uploads/2015/12/6988808-cosmic-quasar-1024x640.jpg"
-            },
-          ],
-        },
-        {
-          id:'111',
-          name:'knowledge_page',
-          profile_picture:'https://www.dotcom-monitor.com/blog/wp-content/uploads/sites/3/2020/05/Vue-logo-1.png',
-          likes_count:292262,
-          is_liked:true,
-          is_saved:true,
-          slide:0,
-          contents:[
-            {
-              id:'1111',
-              type:'image',
-              url:"https://s3.amazonaws.com/codementor_content/2016-Oct/vue.jpg"
-            },
-            {
-              id:'1111',
-              type:'image',
-              url:"https://www.global-itech.com/wp-content/uploads/2020/04/javaScriptIcon-768x870.jpeg"
-            },
-            {
-              id:'1111',
-              type:'image',
-              url:"https://getwallpapers.com/wallpaper/full/2/c/a/165944.jpg"
-            },
-          ],
-        },
-        {
-          id:'111',
-          name:'knowledge_page',
-          profile_picture:'https://www.nicepng.com/png/detail/10-101646_borrow-library-books-book-stack-books-icon.png',
-          likes_count:292262,
-          is_liked:true,
-          is_saved:true,
-          slide:0,
-          contents:[
-            {
-              id:'1111',
-              type:'image',
-              url:"https://source.wustl.edu/wp-content/uploads/2015/12/6988808-cosmic-quasar-1024x640.jpg"
-            },
-            {
-              id:'1111',
-              type:'image',
-              url:"https://s3.amazonaws.com/codementor_content/2016-Oct/vue.jpg"
-            },
-            {
-              id:'1111',
-              type:'image',
-              url:"https://www.global-itech.com/wp-content/uploads/2020/04/javaScriptIcon-768x870.jpeg"
-            },
-          ],
-        },
-      ])
+      posts:ref(...demo_posts)
     }
   },
   computed:{

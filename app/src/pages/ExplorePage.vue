@@ -47,11 +47,28 @@
         </q-input>
       </q-toolbar>
     </q-header>
-    <q-page class="flex flex-center"> Explore Page </q-page>
+    <q-page class="">
+      <div class="tw-w-full tw-flex tw-overflow-x-auto tw-gap-3 tw-py-2 tw-px-3">
+        <div v-for="item in options_topics" @click="!selected_topics.includes(item)? selected_topics.push(item) :selected_topics.splice(selected_topics.indexOf(item), 1)" :key="item" class="tw-bg-gray-200 tw-rounded-md tw-p-1 tw-px-3 tw-shrink-0 tw-font-bold" :class="selected_topics.includes(item)?'tw-bg-black/80 tw-text-white':''">
+          {{ item }}
+        </div>
+      </div>
+      <div class="tw-grid tw-grid-cols-3 tw-gap-px">
+        <template v-for="item in new_posts" :key="item._id">
+          post
+        </template>
+        <template v-for="item in demo_posts" :key="item._id">
+          <div class="tw-aspect-square tw-overflow-hidden tw-flex tw-items-center tw-justify-center">
+            <q-img class="tw-w-full tw-h-full" fit="cover" :src="item.contents[0].url"></q-img>
+          </div>
+        </template>
+      </div>
+    </q-page>
   </div>
 </template>
 <script>
 import { defineComponent, ref } from "vue";
+import demo_posts from '../../public/data/demo_posts.json'
 
 export default defineComponent({
   name: "ExplorePage",
@@ -59,6 +76,16 @@ export default defineComponent({
   setup() {
     return {
       is_search_focused: ref(false),
+      options_topics:[
+        "Programming",
+        "Latest News",
+        "Physics",
+        "Maths",
+        "Biology",
+      ],
+      new_posts:ref([]),
+      demo_posts:ref(...demo_posts),
+      selected_topics:ref([]),
     };
   },
   computed: {},

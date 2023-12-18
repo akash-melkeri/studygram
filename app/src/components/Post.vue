@@ -26,20 +26,21 @@
         swipeable
         animated
         control-color="grey-5"
-        navigation
         arrows
         ref="carousel"
         class="tw-h-auto tw-p-0"
+        @dblclick="double_click"
+        @doubletap="double_click"
+
       >
         <q-carousel-slide v-for="(content,index) in data.contents" :name="index" :key="content.id" class="tw-min-h-min">
           <q-img v-if="content.type == 'image'" :src="content.url" class="tw-w-full "></q-img>
         </q-carousel-slide>
-        <template v-slot:navigation-icon="{ active, btnProps, onClick }">
-          <q-btn v-if="active" size="0.5em" :icon="btnProps.icon" class="tw-text-blue-500/90" flat round dense @click="onClick" />
-          <q-btn v-else size="0.5em" :icon="btnProps.icon" class="tw-text-white/70" flat round dense @click="onClick" />
+        <template v-if="data.contents.length > 1" v-slot:navigation-icon="{ active, btnProps, onClick }">
+          <q-btn v-if="active" size="0.5em" :icon="btnProps.icon" class="tw-hidden tw-text-blue-500/90" flat round dense @click="onClick" />
+          <q-btn v-else size="0.5em" :icon="btnProps.icon" class="tw-hidden tw-text-white/70" flat round dense @click="onClick" />
         </template>
-        <template v-slot:control>
-
+        <template v-if="data.contents.length > 1" v-slot:control>
           <q-carousel-control
             position="left"
             :offset="[18, 0]"
@@ -90,7 +91,7 @@
           <div class="tw-shrink-0">Username</div>
           <div class="tw-font-light tw-grow  tw-flex">
             <div class="tw-w-1/2 tw-grow-0 ellipsis tw-overflow-hidden">
-              CaptionCaptionCaptionCaptionCaptionCaptionCaptionCaptionCaption
+              I am here to make a change that will shape our future.
             </div>
             <div class="tw-grow tw-font-bold tw-text-gray-500">
               More
@@ -124,6 +125,12 @@ export default defineComponent({
     return{
       slide:ref(0),
     }
+  },
+  methods:{
+    double_click(){
+      console.log('here')
+      console.log("okok");
+    },
   },
   mounted(){
 
